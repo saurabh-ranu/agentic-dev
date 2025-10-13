@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 0;
+  background: #F9FAFB;
+  color: #111827;
+}
+
+/* Very small layout helpers - custom fallback alongside Tailwind */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+button { cursor: pointer; }
+textarea, input { font-family: inherit; }
