@@ -1,1 +1,4 @@
 frontend/node_modules/
+backend/venv/
+backend/.env
+backend/.env.sample
