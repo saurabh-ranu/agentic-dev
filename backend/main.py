@@ -5,6 +5,7 @@ from typing import Any, Dict, Optional
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from agents.profiling.router_node import ProfilingRouterNode
 
 # Pydantic response model you created earlier
 from models import ProfilingAgentResponse
@@ -22,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-profiling_agent = ProfilingAgentNode()
+profiling_agent = ProfilingRouterNode()
 
 
 # -------------------------

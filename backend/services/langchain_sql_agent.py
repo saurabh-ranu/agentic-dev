@@ -24,7 +24,7 @@ def create_langchain_sql_agent():
     )
     return agent_executor
 
-def create_langchain_sql_query():
+def create_langchain_sql_query(prompt:str):
     """
     Create a LangChain SQL Agent that connects to the database using SQLAlchemy,
     and can generate and execute SQL queries using the Azure OpenAI LLM.
@@ -34,7 +34,7 @@ def create_langchain_sql_query():
     engine = create_engine(db_url)
     db = SQLDatabase(engine)
 
-    toolkit = SQLDatabaseToolkit(db=db, llm=llm)
+    toolkit = SQLDatabaseToolkit(db=db, llm=llm, prompt=prompt)
 
     sql_chain = create_sql_query_chain(llm, db)
     return sql_chain
