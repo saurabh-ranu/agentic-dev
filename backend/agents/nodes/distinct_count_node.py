@@ -43,6 +43,10 @@ class DistinctCountNode:
         if not table:
             params = db._extract_params(user_text=user_text)
             maybe_table = params["table"]
+            inspector = inspect(engine)
+            if not inspector.has_table(maybe_table):
+                maybe_table = ""
+                ctx["table"] = ""
             filters = params["filters"]
             if maybe_table:
                 ctx["table"] = maybe_table
@@ -86,6 +90,7 @@ class DistinctCountNode:
             except Exception as e:
                 diagnostics["errors"].append(str(e))
                 state.message = f"Could not generate SQL for {table}: {e}"
+                ctx["table"] = ""
                 return state
 
         # STEP 4 — Execute SQL

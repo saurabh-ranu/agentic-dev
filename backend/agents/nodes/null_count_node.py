@@ -46,6 +46,11 @@ class NullCountNode:
             # Attempt to extract from user text if possible
             params = nb._extract_params(user_text=user_text)
             maybe_table = params["table"]
+            inspector = inspect(engine)
+            if not inspector.has_table(maybe_table):
+                maybe_table = ""
+                ctx["table"] = ""
+
             filters = params["filters"]
             if maybe_table:
                 ctx["table"] = maybe_table
