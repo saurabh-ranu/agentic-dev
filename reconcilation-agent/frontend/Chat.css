@@ -1,0 +1,132 @@
+/* General Body Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Main Chat Container --- */
+.chat-container {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    text-align: center;
+    color: #1a73e8;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+
+/* --- Message Display Area --- */
+.message-list {
+    height: 400px; /* Fixed height for scrolling */
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px 15px;
+    margin: 8px 0;
+    max-width: 80%;
+    border-radius: 18px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Human (User) Messages */
+.message.human {
+    align-self: flex-end;
+    background-color: #e3f2fd; /* Light blue */
+    color: #1a73e8;
+    border-bottom-right-radius: 4px; /* Pointed corner */
+}
+
+/* Agent (AI) Messages */
+.message.ai {
+    align-self: flex-start;
+    background-color: #f1f3f4; /* Light grey */
+    color: #333;
+    border-bottom-left-radius: 4px; /* Pointed corner */
+}
+
+/* Tool Messages (Optional, for debugging or specific display) */
+.message.tool {
+    align-self: center;
+    background-color: #fffde7; /* Light yellow */
+    color: #555;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.message strong {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* --- Input Form --- */
+form {
+    display: flex;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #1a73e8;
+}
+
+button {
+    padding: 12px 25px;
+    margin-left: 10px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #1764cc;
+}
+
+button:disabled {
+    background-color: #a0c3e8;
+    cursor: not-allowed;
+}
+
+/* --- Loading Indicator --- */
+.loading-indicator {
+    align-self: flex-start;
+    padding: 10px 15px;
+    margin: 8px 0;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}

@@ -2,3 +2,5 @@ frontend/node_modules/
 backend/venv/
 backend/.env
 backend/.env.sample
+reconcilation-agent/backend/.env
+reconcilation-agent/backend/.env.sample
